@@ -14,8 +14,10 @@ app.use(cors({origin:CLIENT_URL,credentials:true}))
 app.use(passport.initialize())
 //import routes
 const authRoutes=require('./routes/auth')
+const supRoutes=require('./routes/superviseur')
 //initialize routes
 app.use('/api',authRoutes)
+app.use('/api',supRoutes)
 //app start
 const appStart = () => {
     try{

@@ -50,7 +50,7 @@ function App() {
         <Route  path={"/superviseur"} element={<Superviseur/>} />
         <Route  path={"/admin"} element={<Admin/>} />
         </Route>
-        <Route  path={"/home"} element={<Home/>} />
+        <Route  path={"/"} element={<Home/>} />
         <Route element={<RestrictedRoute/>} >
           <Route  path={"/login"} element={<Login/>} />
           <Route  path={"/register"} element={<Register/>} />

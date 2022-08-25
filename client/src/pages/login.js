@@ -51,6 +51,8 @@ function Login(){
 		}
 		else{
 			localStorage.setItem('page','/superviseur')
+			localStorage.setItem('nom',data.user.nom)
+			localStorage.setItem('id',data.user.user_id)
 		}
 	 }
 	
