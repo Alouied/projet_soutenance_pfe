@@ -331,16 +331,7 @@ const Superviseur=()=>{
             logout()
         }
       }  
-     const  open=(id)=>{
-        const sup=localStorage.getItem('nom')
-        console.log("idopen"+id)
-        setnom(sup)
-        setHide(!hide);
-        
-        getetudiant(id)
-       
-       
-      }
+  
     
      const getetudiant=async(id)=>{
         try{
