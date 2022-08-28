@@ -1,14 +1,14 @@
 import React, { Component ,useState,useEffect} from "react";
 
-import {  BrowserRouter ,Routes,Route,Link ,Outlet,Navigate} from "react-router-dom";
+import {  BrowserRouter ,Routes,Route,Link } from "react-router-dom";
 import axios from "axios";
 import Layout from "../component/layout";
-import Jury from "./jury";
-import { onLogin,getuser } from "../api/auth";
+
+import { onLogin } from "../api/auth";
 import {useDispatch} from 'react-redux'
 import{authenticateUser} from '../redux/slices/authSlice'
 
-import { RestrictedRoute } from "../App";
+
 
 
 

@@ -2,14 +2,45 @@
     display: block;
     margin-top: 5px;
     margin-bottom: 20px;
- 
-    padding: 3px;
+ margin-left: 5px;
+    padding: 5px;
 }
 .intro a{ 
     font-style: none;
     display:flex;
 } 
-h5{
+ h2{
     inline-size: 2px solid;
-    
+    justify-content: center;
+ 
+    display: flex;
+
 }
+h5{
+    margin-left: 8px;
+}
+
+.form-group{
+padding: 5px;
+margin-left: 10px;
+}
+.btn{
+    justify-content: center;
+ 
+    display: flex;
+}
+
+.table{
+   margin-left: 120px;
+ margin-top: 70px;
+    width: 1000px;
+   
+    box-shadow: 2px 2px 5px 10px rgb(204, 204, 204);
+}
+.form-group2{
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 70px;
+    display: flex;
+    justify-content: space-between;
+    }

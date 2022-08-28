@@ -73,7 +73,7 @@ function Register()
                     <div className="login-group">
                         <div className="form-group">
                             <label htmlFor="nom" className="sr-only">username</label>
-                            <input type="text" id="nom" name="nom" onChange={(e)=>onChange(e)} className="form-control" value={values.nom} placeholder="username" 
+                            <input type="text" id="nom" name="nom" onChange={(e)=>onChange(e)} value={values.nom} className="form-control"  placeholder="username" 
                              required/>
                         </div>
                         
