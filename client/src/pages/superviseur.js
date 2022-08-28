@@ -30,7 +30,7 @@ const Visite1=(props)=>{
         numero:1,
         })
     values.e_id=props.id
-    values.numero=1
+  values.numero=1
     const e=props.id
     const [error,setError]=useState(false)
     const[success,setSuccess]=useState(false)
@@ -45,6 +45,7 @@ const Visite1=(props)=>{
       };
       const handleClose = () => {
         setOpen(false);
+        setValues({...fiche1})
       };
       const onChange=(e)=>{
         setValues({...values,[e.target.id]:e.target.value})
@@ -58,6 +59,7 @@ const Visite1=(props)=>{
             //const e=values.e_id
             const  response=await getfiche(id)
             setFiche(response.data)
+          
             if (fiche[0].numero==1){
                 setFiche1(fiche[0])
              
@@ -67,7 +69,7 @@ const Visite1=(props)=>{
                 
               
             }
-            
+           
 
         }catch(err)
         {
@@ -85,7 +87,7 @@ const Visite1=(props)=>{
      const onSubmit=async(e)=>{
         e.preventDefault()
         try{
-         if(fiche1)
+         if(fiche1.numero)
           {const { data }= await updatefiche(values)
           setSuccess(data.message)}
           else{
@@ -397,6 +399,7 @@ const Visite2=(props)=>{
       };
       const handleClose = () => {
         setOpen(false);
+        setValues({...fiche1})
       };
       const getFiche=async(id)=>{
         try{
