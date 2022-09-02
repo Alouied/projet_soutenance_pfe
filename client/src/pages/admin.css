@@ -73,16 +73,7 @@
     mix-blend-mode: difference;
   }
   
-  p {
-    position: absolute;
-    left: 0;
-    bottom: 10%;
-    margin: 0 20px 60px 20px;
-    font-size: 18px;
-    color: #ffffff;
-    mix-blend-mode: difference;
-  }
-  
+
   #circle {
     height: 100%;
     width: 100%;

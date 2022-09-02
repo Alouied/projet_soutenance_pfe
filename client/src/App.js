@@ -10,6 +10,7 @@ import Superviseur from "./pages/superviseur";
 import Jury from "./pages/jury";
 import Admin from "./pages/admin";
 import { onLogin } from "./api/auth";
+import Editpv from "./pages/editpv";
 import Navbar from "./component/navbar";
 import { useSelector } from "react-redux/es/exports";
  export const PrivateRoute=()=>{
@@ -47,6 +48,7 @@ function App() {
         <Route element={<PrivateRoute/>} >
         <Route  path={"/dashboard"} element={<Dashboard/>} />
         <Route  path={"/jury"} element={<Jury/>} />
+        <Route  path={"/editpv"} element={<Editpv/>} />
         <Route  path={"/superviseur"} element={<Superviseur/>} />
         <Route  path={"/admin"} element={<Admin/>} />
         </Route>

@@ -1,0 +1,28 @@
+input[type=radio] {
+    appearance: none;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: inline-grid;
+    place-content: center; 
+  }
+
+input[type=radio]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transform-origin: bottom left;
+    background-color: #fff;
+    clip-path: polygon(13% 50%, 34% 66%, 81% 2%, 100% 18%, 39% 100%, 0 71%);
+}
+
+input[type=radio]:checked::before {
+    transform: scale(1.3);
+}
+input[type=radio]:checked{
+    background-color:   #194fbc;
+    border: 2px solid #194fbc;
+}
