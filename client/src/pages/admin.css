@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100vh;
+    background-color: #666666;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .body {
+   
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Jost', sans-serif;
+        background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 430px;
+    width: 430px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  
+  .card:nth-child(1) {
+    margin-right: 10px;
+  }
+  .card:nth-child(2) {
+    margin-right: 10px;
+  }
+  .card:nth-child(3) {
+    margin-right: 10px;
+  }
+  body:hover .card {
+    filter: blur(15px);
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: 0.9s;
+  }
+  
+  body .card:hover {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.9s;
+  }
+  
+  h2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 20px 0 0 1px;
+    font-size: 33px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    mix-blend-mode: difference;
+  }
+  
+  p {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    margin: 0 20px 60px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    mix-blend-mode: difference;
+  }
+  
+  #circle {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: -330px;
+    margin-left: 200px;
+  }
+  
+  #triangle {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 20px;
+    transform: rotate(70deg);
+    margin-top: -430px;
+    margin-left: 200px;
+  }
+  
+  .content a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 20px 20px 0;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 28px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 30px;
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
+  }
+  .myform{
+    display: flex;
+  }
+  .myform input{
+    padding: 10px 15px;
+    border-top: 1px solid ;
+    border-left: 1px solid ;
+    border-bottom: 1px solid ;
+    border-right: 1px solid;
+  }
+  .myform input[type=text]:first-of-type{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .myform input[type=text]:last-of-type{
+    border-right: 1px solid ;
+  }
+  .supervisor{
+    padding: 4px 80px;
+    border-top: 1px solid ;
+    border-left: 1px solid ;
+    border-bottom: 1px solid ;
+    border-right: 1px solid;
+  }
+  .president{
+    padding: 2px 1px;
+    border-top: 1px solid ;
+    border-left: 1px solid ;
+    border-bottom: 1px solid ;
+    border-right: 1px solid;
+  }

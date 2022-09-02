@@ -8,6 +8,7 @@ import getEtudiant , {validefiche,getfiche,updatefiche, updatenote, postnote,get
 import Button from '@mui/material/Button';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
+import { Navbar } from "../component/navbar"
 
 const Visite1=(props)=>{
     const nom=localStorage.getItem('nom')
@@ -110,7 +111,7 @@ const Visite1=(props)=>{
         <Fragment>
             <Button variant="outlined" id='note' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Visite 1</Button>
-                 <Dialog open={open} id="page" maxWidth="lg" onClose={handleClose}>
+                 <Dialog open={open} id="page" maxWidth="lg"className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
                  <form id="sup-form ml-15" onSubmit={(e)=>onSubmit(e)}>
                  
@@ -273,7 +274,7 @@ const Note=(props)=>{
         <Fragment>
             <Button variant="outlined" id='note' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Note</Button>
-                 <Dialog open={open} id="page" maxWidth="lg" onClose={handleClose}>
+                 <Dialog open={open} id="page" maxWidth="lg" className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
                  <form id="note-form ml-15" onSubmit={(e)=>onSubmit(e)}>
                     <h2>Note</h2>
@@ -440,7 +441,7 @@ const Visite2=(props)=>{
         <Fragment>
             <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Visite 2</Button>
-                 <Dialog open={open} id="page" maxWidth="lg" onClose={handleClose}>
+                 <Dialog open={open} id="page" maxWidth="lg" className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
                  <form id="sup-form ml-15" onSubmit={(e)=>onSubmit(e)}>
                         <h2>Fiche 2</h2>
@@ -638,7 +639,7 @@ const Superviseur=()=>{
         </Layout>
     ):(
         <div>
-             <button onClick={()=>logout()} className='btn btn-primary '>Logout</button>
+            <Navbar logout={logout}/>
             <Layout>
                
                
@@ -669,7 +670,7 @@ const Superviseur=()=>{
 
                 
                    
-               
+                
             </Layout>
 
         </div>

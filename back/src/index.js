@@ -15,9 +15,11 @@ app.use(passport.initialize())
 //import routes
 const authRoutes=require('./routes/auth')
 const supRoutes=require('./routes/superviseur')
+const adminRoutes=require('./routes/admin')
 //initialize routes
 app.use('/api',authRoutes)
 app.use('/api',supRoutes)
+app.use('/api',adminRoutes)
 //app start
 const appStart = () => {
     try{

@@ -1,22 +1,23 @@
 import { NavLink } from "react-router-dom"
 import { useSelector } from "react-redux/es/exports"
-
-const Navbar=()=>{
+import { onLogout } from "../api/auth"
+import Button from '@mui/material/Button';
+export const Navbar=(props)=>{
     const {isAuth}=useSelector(state=>state.auth)
-  
+   
+    const page=localStorage.getItem('page')
     return(
         <nav className='navbar navbar-light bg-light'>
             <div className='container'>
-                  <div>
-                    <NavLink to='/home'>
-                        <span  className="navbar-brand mb-0 h1">Home</span>
-                    </NavLink>
-                  </div>
+                  
                   {isAuth ?(
-                    <div>
-                        <NavLink to='/dashboard' className='mx-3'>
-                            <span>Dashboard</span>
+                    <div class="nav">
+                        <NavLink to={page} className='mx-3'>
+                            <span>Home</span>
                         </NavLink>
+                      
+                       
+                    
                     </div>
                   ):(
                     <div>
@@ -29,6 +30,7 @@ const Navbar=()=>{
                     </div>
 
                   )}
+                   <Button onClick={props.logout} variant="contained" className='btn  '>déconnecter</ Button>
             </div>
         </nav>
     )

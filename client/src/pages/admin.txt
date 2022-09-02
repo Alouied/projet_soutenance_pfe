@@ -1,0 +1,167 @@
+import React,{useState,useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import './registerform.css';
+import  Axios  from "axios";
+function Adminregister(){  
+//    const Navigate = useNavigate();
+    const [name,setname] = useState('');
+    const [iden, setiden] = useState('');
+    const [Numsujet, setNumsujet] = useState('');
+    const [sujet, setsujet] = useState('');
+    const [organisme, setorganisme]=useState('');
+    const [supervisor, setsupervisor]=useState('');
+    const [president,setpresident]=useState('');
+    const [first,setfirst]=useState('');
+    const [second, setsecond] = useState('');
+    const [date, setdate] = useState('');
+    const [heure, setheure] = useState('');
+    const [list, setlist] = useState([]);
+    const [etudiant, setetudiant] = useState([]);
+    const [champs,setchamps] = useState([]);
+    const [option,setoption] = useState('');
+    const [msg, setMsg] = useState('');
+    const [msg1, setMsg1] = useState('');
+
+   
+
+
+
+    useEffect(() => { 
+      const Getsupervisor = async () => {
+       const res = await Axios.get("http://localhost:8000/getsup",
+       );
+       setchamps(res.data)
+       console.log("updated")
+      };
+      Getsupervisor();
+      console.log("mounted");
+    },[]);
+
+
+
+    useEffect(() => { 
+      const Getetudiant = async () => {
+       const res = await Axios.get("http://localhost:3002/getetudiants",
+       );
+       setetudiant(res.data)
+      };
+      Getetudiant();
+    },[]);
+
+    useEffect(() => { 
+      const GetList = async () => {
+       const result = await Axios.get("http://localhost:8000/getjury",
+       );
+       setlist(result.data)
+      };
+      GetList();
+    },[]);
+// supervisor
+    const submit = async (e) => {
+      e.preventDefault();
+      await Axios.post('http://localhost:8000/postsuperviseur', {
+        name: name,
+        supervisor:supervisor
+    });
+    window.alert("Supervisor has been successfully registered!")
+  }
+
+//etudiant
+    const press = async (e) => {
+      e.preventDefault();
+      await Axios.post('http://localhost:8000/postetudiant', {
+        name: name,
+        iden:iden,
+        option:option,
+        Numsujet:Numsujet,
+        organisme:organisme,
+        sujet:sujet,
+    });
+    window.alert("Student has been successfully registered!")
+  }
+  
+    return(
+     <div className="body">
+        <form className="myform">
+    <div className="card">
+        <div id="circle"></div>
+       
+        <legend>Affectation des sujets</legend>
+         <input type="text" placeholder="Nom de l'étudiant en autosuggestion"  value={name} onChange={(e) =>{setname(e.target.value)}}required/>
+         <input type="text" placeholder="Identifiant de l'Etudiant" value={iden} onChange={(e) =>{setiden(e.target.value)}} required/>
+         <input type="text" placeholder="Option" value={option} onChange={(e) =>{setoption(e.target.value)}} required/>
+         
+         <div className="same">
+         <input type="text" placeholder="Numéro du sujet" value={Numsujet} onChange={(e) =>{setNumsujet(e.target.value)}}required/>
+         <input type="text" placeholder="Titre du sujet" value={sujet} onChange={(e) =>{setsujet(e.target.value)}} required/>
+         </div>
+         <input type="text" placeholder="Organisme d'accueil (l'entreprise)" value={organisme} onChange={(e) =>{setorganisme(e.target.value)}} required/>     
+        <div className="content">
+        <button onClick={press} ><a>register</a></button>
+        </div>
+      </div>
+        </form>
+        <form className="myform">
+    <div className="card">
+        <div id="circle"></div>
+        <legend>Affectation des superviseurs</legend>
+        <select name="etudiant" id="etudiant" className="supervisor" value={name}
+        onChange={(e) =>setname(e.target.value)}>
+            <option disabled selected>--Etudiant--</option>
+            {etudiant.map(item =>(
+              <option value={item.id}>{item.nom}</option>
+            ))}
+        </select>
+        <select name="supervisor" id="supervisor" className="supervisor" value={supervisor}
+        onChange={(e) =>setsupervisor(e.target.value)}>
+            <option disabled selected>--Supervisor--</option>
+            {champs.map(item =>(
+              <option value={item.id}>{item.name}</option>
+            ))}
+        </select>
+        <div className="content">
+        <button onClick={submit}><a>register</a></button>
+        </div>
+        </div>
+        </form>
+        <form className="myform">
+    <div className="card">
+        <div id="circle"></div>
+       
+        <legend>Affectation des jurys</legend>
+        <input type="text" placeholder="Nom de l'étudiant en autosuggestion"   required/>
+        <input type="text" placeholder="Identifiant de l'Etudiant"  required/>
+        <div className="myform">
+        <select name="president" id="president" className="president" value={president}
+        onChange={(e) =>setpresident(e.target.value)}>
+            <option disabled selected>--president--</option>
+            {list.map(key =>(
+              <option value={key.id}>{key.name}</option>
+            ))}
+        </select>
+        <select name="first" id="first" className="first" value={first}
+        onChange={(e) =>setfirst(e.target.value)}>
+            <option disabled selected>--Membre1--</option>
+            {list.map(key =>(
+              <option value={key.id}>{key.name}</option>
+            ))}
+        </select>
+        <select name="second" id="second" className="second" value={second}
+        onChange={(e) =>setsecond(e.target.value)}>
+            <option disabled selected>--Membre2--</option>
+            {list.map(key =>(
+              <option value={key.id}>{key.name}</option>
+            ))}
+        </select>     
+        </div>
+        <input type="date"  placeholder="Calendrier pour choisir date soutenance" value={date} onChange={(e) =>{setdate(e.target.value)}}required/>
+        <input type="text" placeholder="Heure soutenance"  value={heure} onChange={(e) =>{setheure(e.target.value)}}required/>
+        <div className="content">
+        <button ><a>register</a></button>
+        </div>
+      </div>
+        </form>   
+    </div>
+    )
+}
+export default

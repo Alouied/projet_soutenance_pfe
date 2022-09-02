@@ -2,40 +2,12 @@
     text-align: center;
   }
   
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
+
   
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(20px + 2vmin);
-    color: rgb(255, 255, 255);
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+ 
+
+
+
  
   html{
     font-size:20px;
@@ -208,15 +180,13 @@
   }
   /*=== 8. Custom Checkbox & Radio ===*/
   /* Base for label styling */
-  [type="checkbox"]:not(:checked),
-  [type="checkbox"]:checked,
+
   [type="radio"]:not(:checked),
   [type="radio"]:checked {
     position: absolute;
     left: -9999px;
   }
-  [type="checkbox"]:not(:checked) + label,
-  [type="checkbox"]:checked + label,
+
   [type="radio"]:not(:checked) + label,
   [type="radio"]:checked + label {
     position: relative;
@@ -225,8 +195,7 @@
     cursor: pointer;
   }
   /* checkbox aspect */
-  [type="checkbox"]:not(:checked) + label:before,
-  [type="checkbox"]:checked + label:before,
+
   [type="radio"]:not(:checked) + label:before,
   [type="radio"]:checked + label:before {
     content: '';
@@ -241,8 +210,7 @@
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   }
   /* checked mark aspect */
-  [type="checkbox"]:not(:checked) + label:after,
-  [type="checkbox"]:checked + label:after,
+ 
   [type="radio"]:not(:checked) + label:after,
   [type="radio"]:checked + label:after {
     position: absolute;
@@ -255,21 +223,20 @@
     opacity: 0;
     transform: scale(0);
   }
-  [type="checkbox"]:checked + label:after,
+
   [type="radio"]:checked + label:after {
     opacity: 1;
     transform: scale(1);
   }
   /* disabled checkbox */
-  [type="checkbox"]:disabled:not(:checked) + label:before,
-  [type="checkbox"]:disabled:checked + label:before,
+ 
   [type="radio"]:disabled:not(:checked) + label:before,
   [type="radio"]:disabled:checked + label:before {
     box-shadow: none;
     border-color: #8c8c8c;
     background-color: #878787;
   }
-  [type="checkbox"]:disabled:checked + label:after,
+
   [type="radio"]:disabled:checked + label:after {
     color: #555555;
   }
@@ -278,8 +245,7 @@
     color: #8c8c8c;
   }
   /* accessibility */
-  [type="checkbox"]:checked:focus + label:before,
-  [type="checkbox"]:not(:checked):focus + label:before,
+
   [type="checkbox"]:checked:focus + label:before,
   [type="checkbox"]:not(:checked):focus + label:before {
     border: 1px dotted #f6f6f6;

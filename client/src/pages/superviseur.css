@@ -44,3 +44,9 @@ margin-left: 10px;
     display: flex;
     justify-content: space-between;
     }
+
+.dialogbox{
+    
+    opacity: 0.9;
+    background:black;
+}
