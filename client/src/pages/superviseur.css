@@ -12,7 +12,7 @@
  h2{
     inline-size: 2px solid;
     justify-content: center;
- 
+
     display: flex;
 
 }
@@ -34,8 +34,8 @@ margin-left: 10px;
    margin-left: 120px;
  margin-top: 70px;
     width: 1000px;
-   
-    box-shadow: 2px 2px 5px 10px rgb(204, 204, 204);
+   background-color: #dce8dc;
+    box-shadow: 2px 2px 5px 10px rgb(180, 178, 178);
 }
 .form-group2{
     padding: 5px;
@@ -45,8 +45,3 @@ margin-left: 10px;
     justify-content: space-between;
     }
 
-.dialogbox{
-    
-    opacity: 0.9;
-    background:black;
-}

@@ -6,9 +6,10 @@ import { fetchProtectedInfo,onLogout } from "../api/auth"
 import { unauthenticateUser } from "../redux/slices/authSlice"
 import getEtudiant , {validefiche,getfiche,updatefiche, updatenote, postnote,getnote} from "../api/superviseur"
 import Button from '@mui/material/Button';
-import DialogTitle from '@mui/material/DialogTitle';
+
 import Dialog from '@mui/material/Dialog';
 import { Navbar } from "../component/navbar"
+import Paper from '@mui/material/Paper';
 
 const Visite1=(props)=>{
     const nom=localStorage.getItem('nom')
@@ -109,7 +110,7 @@ const Visite1=(props)=>{
     
     return ( 
         <Fragment>
-            <Button variant="outlined" id='note' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
+            <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Visite 1</Button>
                  <Dialog open={open} id="page" maxWidth="lg"className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
@@ -118,11 +119,12 @@ const Visite1=(props)=>{
                  <h2>Fiche 1</h2>
                         <div className="intro " >
                         
-                            <a>Stagiaire(s):{ props.nom }</a>
-                            <a>Etablissement d'accueil:{props.organisme}</a>
-                            <a>Superviseur: {nom}</a>
-                            <a>N sujet: {props.ns}</a>
-                            <a>Sujet:{props.sujet}</a>
+                             <a>Stagiaire: <strong>{ props.nom }</strong></a>
+                            <a>Etablissement d'accueil: <strong>{props.organisme}</strong></a>
+                            <a>Superviseur: <strong>{nom}</strong></a>
+                            <a>N sujet: <strong> {props.ns}</strong></a>
+                            <a>Sujet: <strong>{props.sujet}</strong></a>
+                          
                           
                         
                         </div>
@@ -131,55 +133,55 @@ const Visite1=(props)=>{
                     <div className="form-group">
 						<label htmlFor="" className="">situation</label>
 						<input type="text"  className="form-control" value={values?.csituation}  onChange={(e)=>{
-                           setValues({...values,csituation:e.target.value})}} required  placeholder="............"/ >
+                           setValues({...values,csituation:e.target.value})}} required  placeholder=".............................................................................................................................."/ >
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Methode</label>
-						<input type="text"  className="form-control"  required onChange={(e)=>setValues({...values,cmethode:e.target.value})} value={values?.cmethode} placeholder="............" />
+						<input type="text"  className="form-control"  required onChange={(e)=>setValues({...values,cmethode:e.target.value})} value={values?.cmethode} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Rapport</label>
-						<input type="text"  className="form-control" id="crapport" required name="crapport" onChange={(e)=>setValues({...values,crapport:e.target.value})} value={values?.crapport} placeholder="............" />
+						<input type="text"  className="form-control" id="crapport" required name="crapport" onChange={(e)=>setValues({...values,crapport:e.target.value})} value={values?.crapport} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarque</label>
-						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder="............" />
+						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
 					</div>
-                    <h5>Réalisation</h5>
+                    <h5>Réalisation :</h5>
                     <div className="form-group">
 						<label htmlFor="" className="">Situation</label>
-						<input type="text"  className="form-control" id="rsituation" required name="rsituation" onChange={(e)=>setValues({...values,rsituation:e.target.value})} value={values?.rsituation} placeholder="............" />
+						<input type="text"  className="form-control" id="rsituation" required name="rsituation" onChange={(e)=>setValues({...values,rsituation:e.target.value})} value={values?.rsituation} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Matériel/systéme</label>
-						<input type="text"  className="form-control" id="rmateriel"required name="rmateriel" onChange={(e)=>setValues({...values,rmateriel:e.target.value})} value={values?.rmateriel} placeholder="............" />
+						<input type="text"  className="form-control" id="rmateriel"required name="rmateriel" onChange={(e)=>setValues({...values,rmateriel:e.target.value})} value={values?.rmateriel} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">langage</label>
-						<input type="text"  className="form-control" id="rlangage"required name="rlangage" onChange={(e)=>setValues({...values,rlangage:e.target.value})} value={values?.rlangage} placeholder="............" />
+						<input type="text"  className="form-control" id="rlangage"required name="rlangage" onChange={(e)=>setValues({...values,rlangage:e.target.value})} value={values?.rlangage} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder="............" />
+						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
 					</div>
-                    <h5>Divers</h5>
+                    <h5>Divers :</h5>
                     <div className="form-group">
 						<label htmlFor="" className="">Niveau</label>
-						<input type="text"  className="form-control" id="dniveau" required name="dniveau" onChange={(e)=>setValues({...values,dniveau:e.target.value})} value={values?.dniveau} placeholder="............" />
+						<input type="text"  className="form-control" id="dniveau" required name="dniveau" onChange={(e)=>setValues({...values,dniveau:e.target.value})} value={values?.dniveau} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Assiduité</label>
-						<input type="text"  className="form-control" required id="dassiduite" name="dassiduite" onChange={(e)=>setValues({...values,dassiduite:e.target.value})} value={values?.dassiduite} placeholder="............" />
+						<input type="text"  className="form-control" required id="dassiduite" name="dassiduite" onChange={(e)=>setValues({...values,dassiduite:e.target.value})} value={values?.dassiduite} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Relations humaines</label>
-						<input type="text"  className="form-control"required id="drh" name="drh" onChange={(e)=>setValues({...values,drh:e.target.value})} value={values?.drh} placeholder="............" />
+						<input type="text"  className="form-control"required id="drh" name="drh" onChange={(e)=>setValues({...values,drh:e.target.value})} value={values?.drh} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="drq"required name="drq" onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder="............" />
+						<input type="text"  className="form-control" id="drq"required name="drq" onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
 					</div>
-                    <div style={{color:'red',margin:'10px 0'}}>{error}</div>
+                 
                 <div style={{color:'green',margin:'10px 0'}}>{success}</div>
                     <div className="btn">
                     <Button  variant="outlined" style={{width:"flex",borderColor:"grey"}}  type="submit" >Valider</Button>
@@ -272,7 +274,7 @@ const Note=(props)=>{
     
     return ( 
         <Fragment>
-            <Button variant="outlined" id='note' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
+            <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Note</Button>
                  <Dialog open={open} id="page" maxWidth="lg" className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
@@ -280,11 +282,12 @@ const Note=(props)=>{
                     <h2>Note</h2>
                         <div className="intro " >
                         
-                        <a>Stagiaire(s):{ props.nom }</a>
-                        <a>Etablissement d'accueil:{ props.organisme }</a>
-                        <a>Superviseur: {nom}</a>
-                        <a>N sujet: {props.ns}</a>
-                        <a>Sujet: {props.sujet}</a>
+                        <a>Stagiaire: <strong>{ props.nom }</strong></a>
+                            <a>Etablissement d'accueil: <strong>{props.organisme}</strong></a>
+                            <a>Superviseur: <strong>{nom}</strong></a>
+                            <a>N sujet: <strong> {props.ns}</strong></a>
+                            <a>Sujet: <strong>{props.sujet}</strong></a>
+                          
                       
                     
                     </div>
@@ -294,30 +297,30 @@ const Note=(props)=>{
 						<input type="number" required value={values?.assiduite}  onChange={(e)=>{
                           setValues({...values,assiduite:e.target.value});
                            
-                        } } className="form-control" style={{width:"70px"}}  placeholder="............" />
+                        } } className="form-control" style={{width:"70px"}}  placeholder="..." />
 					    <label>/5</label>
                     </div>
                     <div className="form-group2">
 						<label htmlFor="" className="">Conception et adéquation de la solution.................................</label>
 						<input type="number" required value={values?.conception}  onChange={(e)=>{
-                           setValues({...values,conception:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="............" />
+                           setValues({...values,conception:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="..." />
                         <label>/5</label>
                     </div>
                     <div className="form-group2">
 						<label htmlFor="" className="">Rapport et respect des délais.....................................................</label>
 						<input type="number" required value={values?.rapport}  onChange={(e)=>{
-                           setValues({...values,rapport:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="............" />
+                           setValues({...values,rapport:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="..." />
                         <label>/5</label>
                     </div>
                     <div className="form-group2">
 						<label htmlFor="" className="">Réalisation.....................................................................................</label>
 						<input type="number" required value={values?.realisation}  onChange={(e)=>{
-                           setValues({...values,realisation:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="............" />
+                           setValues({...values,realisation:e.target.value})}} className="form-control" style={{width:"70px"}}   placeholder="..." />
                         <label>/5</label>
                     </div>
                   
                     <div className="form-group2">
-						<label htmlFor="" className="">Note finale..... ...............................................................................</label>
+						<label htmlFor="" className="">Note finale............................................................................................</label>
 						
                         <label>{values?.note} /20</label>
                     </div>
@@ -447,11 +450,12 @@ const Visite2=(props)=>{
                         <h2>Fiche 2</h2>
                         <div className="intro " >
                         
-                            <a>Stagiaire(s):{ props.nom }</a>
-                            <a>Etablissement d'accueil:{props.organisme}</a>
-                            <a>Superviseur: {nom}</a>
-                            <a>N sujet: {props.ns}</a>
-                            <a>Sujet:{props.sujet}</a>
+                        <a>Stagiaire: <strong>{ props.nom }</strong></a>
+                            <a>Etablissement d'accueil: <strong>{props.organisme}</strong></a>
+                            <a>Superviseur: <strong>{nom}</strong></a>
+                            <a>N sujet: <strong> {props.ns}</strong></a>
+                            <a>Sujet: <strong>{props.sujet}</strong></a>
+                          
                           
                         
                         </div>
@@ -459,53 +463,53 @@ const Visite2=(props)=>{
                         <h5>Conception :</h5>
                         <div className="form-group">
 						<label htmlFor="" className="">situation</label>
-						<input type="text"  className="form-control" id="csituation" required name="csituation" onChange={(e)=>setValues({...values,csituation:e.target.value})} value={values?.csituation} placeholder="............" />
+						<input type="text"  className="form-control" id="csituation" required name="csituation" onChange={(e)=>setValues({...values,csituation:e.target.value})} value={values?.csituation} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Methode</label>
-						<input type="text"  className="form-control" id="cmethode" required name="cmethode" onChange={(e)=>setValues({...values,cmethode:e.target.value})} value={values?.cmethode} placeholder="............" />
+						<input type="text"  className="form-control" id="cmethode" required name="cmethode" onChange={(e)=>setValues({...values,cmethode:e.target.value})} value={values?.cmethode} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Rapport</label>
-						<input type="text"  className="form-control" id="crapport"required name="crapport" onChange={(e)=>setValues({...values,crapport:e.target.value})} value={values?.crapport} placeholder="............" />
+						<input type="text"  className="form-control" id="crapport"required name="crapport" onChange={(e)=>setValues({...values,crapport:e.target.value})} value={values?.crapport} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarque</label>
-						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder="............" />
+						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
 					</div>
-                    <h5>Réalisation</h5>
+                    <h5>Réalisation :</h5>
                     <div className="form-group">
 						<label htmlFor="" className="">Situation</label>
-						<input type="text"  className="form-control" id="rsituation"required  name="rsituation" onChange={(e)=>setValues({...values,rsituation:e.target.value})} value={values?.rsituation} placeholder="............" />
+						<input type="text"  className="form-control" id="rsituation"required  name="rsituation" onChange={(e)=>setValues({...values,rsituation:e.target.value})} value={values?.rsituation} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Matériel/systéme</label>
-						<input type="text"  className="form-control" id="rmateriel"required name="rmateriel" onChange={(e)=>setValues({...values,rmateriel:e.target.value})} value={values?.rmateriel} placeholder="............" />
+						<input type="text"  className="form-control" id="rmateriel"required name="rmateriel" onChange={(e)=>setValues({...values,rmateriel:e.target.value})} value={values?.rmateriel} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">langage</label>
-						<input type="text"  className="form-control" id="rlangage" required name="rlangage" onChange={(e)=>setValues({...values,rlangage:e.target.value})} value={values?.rlangage} placeholder="............" />
+						<input type="text"  className="form-control" id="rlangage" required name="rlangage" onChange={(e)=>setValues({...values,rlangage:e.target.value})} value={values?.rlangage} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder="............" />
+						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
 					</div>
-                    <h5>Divers</h5>
+                    <h5>Divers :</h5>
                     <div className="form-group">
 						<label htmlFor="" className="">Niveau</label>
-						<input type="text"  className="form-control" id="dniveau"required name="dniveau" onChange={(e)=>setValues({...values,dniveau:e.target.value})} value={values?.dniveau} placeholder="............" />
+						<input type="text"  className="form-control" id="dniveau"required name="dniveau" onChange={(e)=>setValues({...values,dniveau:e.target.value})} value={values?.dniveau} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Assiduité</label>
-						<input type="text"  className="form-control" id="dassiduite" required name="dassiduite" onChange={(e)=>setValues({...values,dassiduite:e.target.value})} value={values?.dassiduite} placeholder="............" />
+						<input type="text"  className="form-control" id="dassiduite" required name="dassiduite" onChange={(e)=>setValues({...values,dassiduite:e.target.value})} value={values?.dassiduite} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Relations humaines</label>
-						<input type="text"  className="form-control" id="drh" name="drh"required  onChange={(e)=>setValues({...values,drh:e.target.value})} value={values?.drh} placeholder="............" />
+						<input type="text"  className="form-control" id="drh" name="drh"required  onChange={(e)=>setValues({...values,drh:e.target.value})} value={values?.drh} placeholder=".............................................................................................................................." />
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="drq" name="drq"  required onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder="............" />
+						<input type="text"  className="form-control" id="drq" name="drq"  required onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
 					</div>
                     <div style={{color:'red',margin:'10px 0'}}>{error}</div>
                 <div style={{color:'green',margin:'10px 0'}}>{success}</div>
@@ -644,7 +648,7 @@ const Superviseur=()=>{
                
                
     
-             
+            
                 
                 <table className="table">
                    <thead>
@@ -666,7 +670,7 @@ const Superviseur=()=>{
                 </table>       
                 
                 
-        
+     
 
                 
                    

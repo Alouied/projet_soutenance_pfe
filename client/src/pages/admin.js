@@ -149,15 +149,15 @@ const Admin=()=>{
     <div className="card">
         <div id="circle"></div>
        
-        <legend>Affectation des sujets</legend>
+        <h5>Affectation des sujets</h5>
          <input type="text" placeholder="Nom de l'étudiant en autosuggestion"  value={name} onChange={(e) =>{setname(e.target.value)}}required/>
          <input type="text" placeholder="Identifiant de l'Etudiant" value={iden} onChange={(e) =>{setiden(e.target.value)}} required/>
          <input type="text" placeholder="Option" value={option} onChange={(e) =>{setoption(e.target.value)}} required/>
          
-         <div className="same">
+        
          <input type="text" placeholder="Numéro du sujet" value={Numsujet} onChange={(e) =>{setNumsujet(e.target.value)}}required/>
          <input type="text" placeholder="Titre du sujet" value={sujet} onChange={(e) =>{setsujet(e.target.value)}} required/>
-         </div>
+         
          <input type="text" placeholder="Organisme d'accueil (l'entreprise)" value={organisme} onChange={(e) =>{setorganisme(e.target.value)}} required/>     
         <div className="content">
         <button onClick={press} ><a>register</a></button>
@@ -167,10 +167,10 @@ const Admin=()=>{
         <form className="myform">
     <div className="card">
         <div id="circle"></div>
-        <legend>Affectation des superviseurs</legend>
+        <h5>Affectation des superviseurs</h5>
         <select name="etudiant" id="etudiant" className="supervisor" value={id}
         onChange={(e) =>setid(e.target.value)}>
-            <option disabled selected>--Etudiant--</option>
+            <option >--Etudiant--</option>
             {etudiant?.map(item =>{
                 var test=true;
                  for(let i=0;i<etudiantaffectedsup.length;i++)
@@ -185,7 +185,7 @@ const Admin=()=>{
         </select>
         <select name="supervisor" id="supervisor" className="supervisor" value={supervisor}
         onChange={(e) =>setsupervisor(e.target.value)}>
-            <option disabled selected>--Supervisor--</option>
+            <option >--Supervisor--</option>
             {champs.map(item =>(
               <option value={item.user_id}>{item.nom}</option>
             ))}
@@ -199,10 +199,10 @@ const Admin=()=>{
     <div className="card">
         <div id="circle"></div>
        
-        <legend>Affectation des jurys</legend>
+        <h5>Affectation des jurys</h5>
         <select name="etudiant" id="etudiant" className="supervisor" value={id}
         onChange={(e) =>setid(e.target.value)}>
-            <option disabled selected>--Etudiant--</option>
+            <option >--Etudiant--</option>
             {etudiant.map(item =>{
                 var test=true;
                  for(let i=0;i<etudiantaffectedjury.length;i++)
@@ -217,21 +217,21 @@ const Admin=()=>{
         <div className="myform">
         <select name="president" id="president" className="president" value={president}
         onChange={(e) =>setpresident(e.target.value)}>
-            <option disabled selected>--president--</option>
+            <option  >president</option>
             {list.map(key =>{
               if(second!=key.user_id && first!=key.user_id){ return (<option value={key.user_id}>{key.nom}</option>)}
 })}
         </select>
         <select name="first" id="first" className="first" value={first}
         onChange={(e) =>setfirst(e.target.value)}>
-            <option disabled selected>--Membre1--</option>
+            <option >membre</option>
             {list.map((key) =>{
               if( president!=key.user_id && second!=key.user_id){ return (<option value={key.user_id}>{key.nom}</option>)}
 })}
         </select>
-        <select name="second" id="second" className="second" value={second}
+        <select name="second" id="second"  className="second" value={second}
         onChange={(e) =>setsecond(e.target.value)}>
-            <option disabled selected>--Membre2--</option>
+            <option >membre</option>
             {list.map(key =>{
             if( president!=key.user_id && first!=key.user_id) { return <option value={key.user_id}>{key.nom}</option>}
              })}

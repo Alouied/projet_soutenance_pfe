@@ -13,7 +13,7 @@ export const Navbar=(props)=>{
                   {isAuth ?(
                     <div class="nav">
                         <NavLink to={page} className='mx-3'>
-                            <span>Home</span>
+                            <Button>Home</Button>
                         </NavLink>
                       
                        
@@ -22,15 +22,15 @@ export const Navbar=(props)=>{
                   ):(
                     <div>
                         <NavLink to='/login' >
-                            <span>Login</span>
+                            <Button>Login</Button>
                         </NavLink>
                         <NavLink to='/register' className='mx-3'>
-                            <span>Register</span>
+                            <Button>Register</Button>
                         </NavLink>
                     </div>
 
                   )}
-                   <Button onClick={props.logout} variant="contained" className='btn  '>déconnecter</ Button>
+                   <Button onClick={props.logout} className='btn  '>déconnecter</ Button>
             </div>
         </nav>
     )
