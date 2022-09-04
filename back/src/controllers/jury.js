@@ -1,5 +1,5 @@
 const db=require('../db/basedonnee')
-
+ 
  exports.getjury= async (req,res)=>{
     const {id}=req.params
    
@@ -127,3 +127,5 @@ exports.putnotesencadrant = async (req,res)=>{
      console.log(error.message)
     }
 }
+
+

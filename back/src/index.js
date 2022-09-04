@@ -1,4 +1,6 @@
 const express=require("express")
+const multer=require("multer") 
+
 const app=express()
 const {PORT, CLIENT_URL}=require('./constants')
 const cookieParser=require('cookie-parser')
@@ -22,6 +24,30 @@ app.use('/api',authRoutes)
 app.use('/api',supRoutes)
 app.use('/api',adminRoutes)
 app.use('/api',juryRoutes)
+//files pdf
+
+const storage=multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,'public')
+    },
+    filename:(req,file,cb)=>{
+        cb(null,Date.now()+'_'+file.originalname)
+    }
+})
+
+const upload=multer({storage}).single('file');
+
+app.post('api/upload',(req,res)=>{
+    upload(req,res,(err)=>{
+        if(err){
+            return res.status(500).json(err)
+        }
+        return res.status(200).send(req.file)
+    })
+});
+
+
+
 //app start
 const appStart = () => {
     try{

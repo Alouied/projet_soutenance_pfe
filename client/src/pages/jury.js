@@ -230,7 +230,7 @@ import Navbar from "../component/navbar"
                  Note</Button>
                  <Dialog open={open} id="page" maxWidth="lg" onClose={handleClose} >
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "650px",width:"2px", color:"red"}}>X</Button>
-                 <h5 align="center">Fiche note encadrant de l'entreprise <div> Pour {props.nom}</div></h5>
+                 <h5 align="center">Fiche note encadrant de l'entreprise <div> Pour <strong> {props.nom} </strong></div></h5>
                  <h5 align="center"> </h5>
                  <form onSubmit={handleSubmit}>
                   <table className='styled-table mb-3' id='notetable' >
@@ -357,7 +357,7 @@ import Navbar from "../component/navbar"
 
           <td align='center'>{(test || !test10)?(!test10)?<p>{NOTE1/5+N2/5+N3/5+N4/5+N5/5}</p>:(<p>{values1?.moyenne}</p>) :(<p>{notes?.moyenne}</p>)}</td>
           <td align='center'>{(test || !test10)?(<input id='publiable' checked={values1?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />):(<input id='publiable' checked={notes?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />)}</td>
-          <td>{((notes || test10) && !test2)?(<div><button align='center' className="button-46 " onClick={modifier} role="button">modifier</button></div>):(<button align='center' className="button-46 " onClick={submit} role="button">valider</button>)}</td>
+          <td>{((notes || test10) && !test2)?(<div ><Button align='center'  onClick={modifier} role="button">modifier</Button></div>):(<Button align='center'  onClick={submit} role="button">valider</Button>)}</td>
         </Fragment>
        )}
 
@@ -498,9 +498,8 @@ const Jury = (props) => {
           <p id="parent-modal-description"></p>
           <DialogTitle style={{color:'#1f4b77', fontFamily:"cursive", fontWeight:"bold", fontSize:"25px"}} > </DialogTitle>
           </div>
-<Paper sx={{ width: '100%', overflow: 'hidden' }}>
-     <TableContainer>
-        <table >
+
+        <table className="table2">
                 <thead><tr><td align="center" >N°</td>
                 <td align="center" className='head container'>Opt.</td>
                 <td align="center" className='head container'>Elève Ingénieur</td>
@@ -522,8 +521,8 @@ const Jury = (props) => {
                      ))}
               </tbody> 
             </table>
-            </TableContainer>
-        </Paper><br />
+           
+       <br />
         <div align='center'><button className='btn btn-primary'><a href='/editpv' id='pv'>edit pv</a></button></div>
        
       </React.Fragment>
