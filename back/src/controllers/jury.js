@@ -128,4 +128,25 @@ exports.putnotesencadrant = async (req,res)=>{
     }
 }
 
+exports.postpv = async (req,res)=>{
+    const {pvurl}=req.body;
+   
+    try{
+        await db.query('insert into pv (pvurl) values ($1)',[pvurl])
+        console.log('Success')
+    }
+    catch(error){
+     console.log(error.message)
+    }
+}
+exports.getpv= async (req,res)=>{
 
+   
+    try{
+        const pv= await db.query('select * from pv')
+        return res.status(200).json(pv.rows)
+    }
+    catch(error){
+     console.log(error.message)
+    }
+}

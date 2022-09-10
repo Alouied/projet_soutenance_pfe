@@ -24,6 +24,7 @@ import getEtudiant from '../api/jury'
 import axios from 'axios'
 import {getnote} from "../api/superviseur"
 import Navbar from "../component/navbar"
+import {FileUploader} from "./files"
 
 function Aziz(props) {
     const [open, setOpen] =useState(false);
@@ -234,7 +235,7 @@ const Editpv=()=>{
         try{ 
             const res2 = await axios.get(`http://localhost:8000/api/getuser/${id2}`)
             setmembre2(res2.data[0])
-            console.log("data",res2.data[0])
+           
         }catch(err)
         {
             console.log("fail")
@@ -269,14 +270,14 @@ const Editpv=()=>{
         getjury();
     },[])
 
-    console.log('pres',pres)
+
     const getjury = async() => {
         try{
           const id=localStorage.getItem('id')
           const response= await fetch(`http://localhost:8000/api/getjury/${id}`)
           const jsonData=await response.json()
           setjury(jsonData)
-          console.log(jsonData[0])
+          
           setpres(jsonData[0])
           }catch(err)
           {
@@ -371,7 +372,10 @@ const Editpv=()=>{
 
                  </Paper><br></br>
                  </div>
-                 <div align='center'><button className='btn btn-primary' onClick={handleprint}>imprimer</button></div>
+                 <div align='center'><button className='btn btn-primary' onClick={handleprint}>imprimer</button>
+                 <FileUploader></FileUploader>
+                 </div>
+                 
                 <br></br>
             </React.Fragment>
             </Layout>

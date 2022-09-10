@@ -8,3 +8,18 @@ export default async function getEtudiant(id){
     )
    
 }
+export async function getpv(){
+    return await axios.get(
+        'http://localhost:8000/api/getpv'
+        
+    )
+   
+}
+
+export  async function postpv(val){
+    return await axios.post(
+       'http://localhost:8000/api/postpv',val
+        
+    )
+   
+}

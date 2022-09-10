@@ -12,6 +12,7 @@ import Admin from "./pages/admin";
 import { onLogin } from "./api/auth";
 import Editpv from "./pages/editpv";
 import Navbar from "./component/navbar";
+import Jurynotes from  "./pages/jurynotes"
 import { useSelector } from "react-redux/es/exports";
  export const PrivateRoute=()=>{
   const {isAuth}=useSelector(state=>state.auth)
@@ -50,6 +51,7 @@ function App() {
         <Route  path={"/jury"} element={<Jury/>} />
         <Route  path={"/editpv"} element={<Editpv/>} />
         <Route  path={"/superviseur"} element={<Superviseur/>} />
+        <Route  path={"/jurynotes"} element={<Jurynotes/>} />
         <Route  path={"/admin"} element={<Admin/>} />
         </Route>
         <Route  path={"/"} element={<Home/>} />

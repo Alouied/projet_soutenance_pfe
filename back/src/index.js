@@ -25,23 +25,28 @@ app.use('/api',supRoutes)
 app.use('/api',adminRoutes)
 app.use('/api',juryRoutes)
 //files pdf
-
+app.use(express.static('public'))
 const storage=multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,'public')
+    destination:(req,file,callback)=>{
+        callback(null,'./public')
     },
-    filename:(req,file,cb)=>{
-        cb(null,Date.now()+'_'+file.originalname)
+    filename:(req,file,callback)=>{
+        callback(null,file.originalname)
     }
-})
+});
 
 const upload=multer({storage}).single('file');
 
-app.post('api/upload',(req,res)=>{
+app.post('/api/upload',(req,res)=>{
+   
     upload(req,res,(err)=>{
+       
         if(err){
+            
             return res.status(500).json(err)
+            
         }
+        
         return res.status(200).send(req.file)
     })
 });
