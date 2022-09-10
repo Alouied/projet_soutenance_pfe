@@ -372,7 +372,9 @@ const Editpv=()=>{
 
                  </Paper><br></br>
                  </div>
-                 <div align='center'><button className='btn btn-primary' onClick={handleprint}>imprimer</button>
+                 <div align='center' >
+                  <Button variant="contained" onClick={handleprint}>imprimer</Button>
+                 
                  <FileUploader></FileUploader>
                  </div>
                  

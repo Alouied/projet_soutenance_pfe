@@ -99,9 +99,9 @@ function Login(){
 				<div style={{color:'red',margin:'10px 0'}}>{error}</div>
 				
 			</div>
-			<div className="etc-login-form">
+			<div className="etc-login-form" >
            
-				<p>new user?</p> <Link to={"/register"}>create new account</Link>
+				<p>new user? <Link to={"/register"}>create new account</Link></p>
 			</div>
             
 		</form>

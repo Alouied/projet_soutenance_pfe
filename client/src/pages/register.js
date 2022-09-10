@@ -89,21 +89,21 @@ function Register()
                        
                         
                         <div className="form-group login-group-checkbox">
-                        <div className="form-group login-group-checkbox">
-                            <input type="radio" className="" name="reg_statut" id="superviseur" placeholder="username" onChange={(e)=>{
+                        <div className="form-group login-group-checkbox" style={{width:'150%'}}>
+                            <input type="radio" className=""  style={{marginLeft:'-5px',marginRight:'5px'}}name="reg_statut" id="superviseur" placeholder="username" onChange={(e)=>{
                                 setSup(e.target.value);
                                 setadm(false);
                                 setJury(false);
                             }}/>
                             <label htmlFor="superviseur">superviseur</label>
                             
-                            <input type="radio" className="" name="reg_statut" id="jury" placeholder="username" onChange={(e)=>{
+                            <input type="radio" className="" style={{marginLeft:'10px',marginRight:'5px'}} name="reg_statut" id="jury" placeholder="username" onChange={(e)=>{
                                 setJury(e.target.value);
                                 setSup(false)
                                 setadm(false)
                             }}/>
                             <label htmlFor="jury">jury</label>
-                            <input type="radio" className="" name="reg_statut" id="admin" placeholder="username" onChange={(e)=>{
+                            <input type="radio" className="" style={{marginLeft:'10px',marginRight:'5px'}} name="reg_statut" id="admin" placeholder="username" onChange={(e)=>{
                                 setJury(false);
                                 setSup(false);
                                 setadm(e.target.value);
