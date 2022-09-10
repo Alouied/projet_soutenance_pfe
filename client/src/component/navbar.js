@@ -4,8 +4,9 @@ import { onLogout } from "../api/auth"
 import Button from '@mui/material/Button';
 export const Navbar=(props)=>{
     const {isAuth}=useSelector(state=>state.auth)
-   
+  
     const page=localStorage.getItem('page')
+    const test=(page==="/admin")
     return(
         <nav className='navbar navbar-light bg-light'>
             <div className='container'>
@@ -15,7 +16,13 @@ export const Navbar=(props)=>{
                         <NavLink to={page} className='mx-3'>
                             <Button>Home</Button>
                         </NavLink>
-                      
+                        {test &&(
+                                 <NavLink to='/jurynotes' className='mx-3'>
+                                 <Button>Resultat</Button>
+                             </NavLink>
+                        )
+
+                        }
                        
                     
                     </div>
