@@ -4,7 +4,7 @@ import Login from "./login";
 import {  BrowserRouter ,Routes,Route,Link } from "react-router-dom";
 import Layout from "../component/layout";
 import onRegistration from "../api/auth"
-
+import Navbar from "../component/navbar";
 
 function Register()
 
@@ -62,6 +62,8 @@ function Register()
    
  
     return(
+        <>
+        <Navbar ></Navbar>
         <Layout>
         <div className="text-center" >
         <div className="logo">register</div>
@@ -129,7 +131,7 @@ function Register()
     </div>
         
     </Layout> 
-   
+    </>
     );
 
 }

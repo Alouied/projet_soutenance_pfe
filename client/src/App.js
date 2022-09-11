@@ -24,8 +24,10 @@ import { useSelector } from "react-redux/es/exports";
 export const RestrictedRoute=()=>{
 
   const page=localStorage.getItem('page');
-  
+  localStorage.setItem('page',page)
   const {isAuth}=useSelector(state=>state.auth)
+
+  
   return <>{!isAuth ? <Outlet/> :<Navigate to={page}/>}</>
 
 
@@ -38,7 +40,8 @@ export const RestrictedRoute=()=>{
 
 
 function App() {
-  
+ 
+  const page=localStorage.getItem('page')
     return(
       <BrowserRouter>
       
@@ -48,18 +51,25 @@ function App() {
         <Routes>
         <Route element={<PrivateRoute/>} >
         <Route  path={"/dashboard"} element={<Dashboard/>} />
-        <Route  path={"/jury"} element={<Jury/>} />
-        <Route  path={"/editpv"} element={<Editpv/>} />
+       
+     
+        <Route  path={"/jury"} element={ (page==="/jury")?(<Jury/>):(<Dashboard/>)} />
+
+        <Route  path={"/editpv"} element={<Editpv/>} /> 
+       
         <Route  path={"/superviseur"} element={<Superviseur/>} />
+      
+          <Route>
         <Route  path={"/jurynotes"} element={<Jurynotes/>} />
-        <Route  path={"/admin"} element={<Admin/>} />
+        <Route  path={"/admin"} element={<Admin/>} /></Route>
         </Route>
         <Route  path={"/"} element={<Home/>} />
         <Route element={<RestrictedRoute/>} >
+         
           <Route  path={"/login"} element={<Login/>} />
           <Route  path={"/register"} element={<Register/>} />
         </Route>
-         
+        <Route path={"/"} element={<Home/>}/>
         </Routes>
       </div>
     

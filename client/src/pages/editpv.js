@@ -303,13 +303,14 @@ const Editpv=()=>{
             <Layout>
                
             <React.Fragment >
-                <div ref={componentRef} >
-            <Paper sx={{ width: '905px', overflow: 'hidden', align:'center' }}>
+                <div ref={componentRef} align='center'>
+            <Paper sx={{ width: '905px',height:'1200px', overflow: 'hidden', align:'center' }}>
               <div id='marge'>
                 <div className="divu">
                 <div id='text'><p>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</p></div>
+                <div><img src="ensilogo.jpg"/></div>
                 <div id='text'><p>DIRECTION DES STAGES Année Universitaire 2020/2021</p></div></div>
-                <p id='ines'>Tunis le {currentDate}</p>
+                <div align="left"> <p id='ines'>Tunis le {currentDate}</p></div>
                 <div id='text1'><h5><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h5></div>
                 <br></br><div id='fu'>  Après examen des rapports et des exposés des élève-ingénieurs
                    II3 dans le cadre de la </div>validation de
@@ -345,15 +346,20 @@ const Editpv=()=>{
                  </TableContainer>
                  </div>
                  </Paper><br></br><br></br><br></br>
-                 <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                  <div id='marge'>
-                 <div id='text'><h6>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</h6></div>
-                <p>Tunis le {currentDate}</p>
-                <div id='text1'><h4><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h4></div>
-                <br></br><p>Après examen des rapports et des exposés des élève-ingénieurs II3 dans le cadre de la validation de leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :</p>
-                <div><p>President: {nom}</p>
-                <p>Membres: {membre1?.nom}</p>
-                <p>{membre2?.nom}</p></div>
+                 <Paper sx={{ width: '905px', overflow: 'hidden', align:'center' }}>
+              <div id='marge'>
+                <div className="divu">
+                <div id='text'><p>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</p></div>
+                <div><img src="ensilogo.jpg"/></div>
+                <div id='text'><p>DIRECTION DES STAGES Année Universitaire 2020/2021</p></div></div>
+               <div align="left"> <p id='ines'>Tunis le {currentDate}</p></div>
+                <div id='text1'><h5><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h5></div>
+                <br></br><div id='fu'>  Après examen des rapports et des exposés des élève-ingénieurs
+                   II3 dans le cadre de la </div>validation de
+                    leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :<br></br>
+                <div className="jl"><a>President :<strong> {nom}</strong></a>
+                <a>Membres : <strong>{membre1?.nom}</strong></a>
+                <a><strong>{membre2?.nom}</strong></a></div>
                 <p>Déclarent les résultats suivants : </p>
                 <TableContainer >
                     <div align='center'>

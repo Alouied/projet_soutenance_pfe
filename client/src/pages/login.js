@@ -7,7 +7,7 @@ import Layout from "../component/layout";
 import { onLogin } from "../api/auth";
 import {useDispatch} from 'react-redux'
 import{authenticateUser} from '../redux/slices/authSlice'
-
+import { Navbar } from "../component/navbar";
 
 
 
@@ -22,7 +22,7 @@ function Login(){
 		
 	})
 	const [error,setError]=useState(false)
-  
+	const [page,setPage]=useState('')
 
        
     const onChange=(e)=>{
@@ -44,6 +44,7 @@ function Login(){
 	
 	 if (data.user.adm){
 		localStorage.setItem('page','/admin')
+		
 	 }
 	 else{
 		if(data.user.jury){
@@ -59,9 +60,10 @@ function Login(){
 	   localStorage.setItem('isAuth','true')
 	   localStorage.setItem('nom',data.user.nom)
 	   localStorage.setItem('id',data.user.user_id)
-      
+	  
    
 	}
+	
 	   catch(error)
 	   {
 	    console.log(error.response.data.errors[0].msg)
@@ -69,11 +71,15 @@ function Login(){
 	 
 	   }
 	 }
-	
-    
+	 
+    const logout=()=>{
+		
+	}
 
     
     return(
+		<>
+		<Navbar ></Navbar>
         <Layout>
 <div className="text-center" >
    
@@ -114,6 +120,7 @@ function Login(){
 	
 </div>
 </Layout>
+</>
     );
 }
 export default Login;
