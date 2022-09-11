@@ -76,7 +76,7 @@ const Jurynotes=()=>{
                {files.map(file=>{
 
                  
-                   return  <tr><td>{file.id}/ <a href={`http://localhost:8000/${file.pvurl}`}>ouvrir</a></td></tr>
+                   return  <tr><td>{file.id}/ <a href={`http://localhost:8000/${file.pvurl}`}>{file.pvurl}</a></td></tr>
                                    
 
                } )}

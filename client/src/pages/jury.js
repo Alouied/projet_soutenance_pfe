@@ -140,7 +140,7 @@ import Navbar from "../component/navbar"
         n4qualite:0, 
         n5question:0,
         moyenne:0, 
-        publiable:''
+        publiable:'NP'
       })
       values1.e_id=props.ide
       values1.n1encadrant=N1
@@ -167,6 +167,7 @@ import Navbar from "../component/navbar"
       const submit = async () =>
       {
         try{
+          window.location.reload(false)
           settest2(false)
           settest(false)
           if (notes!=undefined)
@@ -397,91 +398,101 @@ import Navbar from "../component/navbar"
 
 
 const Jury = (props) => {
-    const dispatch=useDispatch()
-    const [loading,setLoading]=useState(true)
-    const [protectedData,setProtectedData]=useState(null)
-    const Navigate = useNavigate();
-    const [currentDate,setcurrentDate]=useState('');
-    const [jury,setjury]=useState([])
-    const [open, setOpen] =useState(false);
-    const [test,settest]=useState(false)
-    const [notes, setnotes] =useState([]);
+  const dispatch=useDispatch()
+  const [loading,setLoading]=useState(true)
+  const [protectedData,setProtectedData]=useState(null)
+  const Navigate = useNavigate();
+  const [currentDate,setcurrentDate]=useState('');
+  const [jury,setjury]=useState([])
+  const [open, setOpen] =useState(false);
+  const [test,settest]=useState(false)
+  const [test2,settest2]=useState(true)
+  const [test3,settest3]=useState(false)
+  const [notes, setnotes] =useState([]);
 
-     const getjury = async() => {
-      try{
-        const id=localStorage.getItem('id')
-        const response= await fetch(`http://localhost:8000/api/getjury/${id}`)
-        const jsonData=await response.json()
-        setjury(jsonData)
-        }catch(err)
-        {
-           console.error(err.message)
-        }
-     }
+  function timeout(ms){
+    return new Promise((resolve)=>setTimeout(resolve,ms))
+  }
 
-     const handleClickOpen = () => {
-      setOpen(true);
-    };
-    const handleClose = () => {
-      setOpen(false);
-    };
 
-    const check = () => {
-        
-      if (notes!=undefined)
-        { settest(true)}
-        if (notes===undefined)
-        {
-          settest(false)
-        }
-    }
-
-    const getjurynote = async (id) => {
-      try {
-        const res = await axios.get('http://localhost:8000/api/getjurynotes')
-        setnotes(res.data[0])
-      }catch(e)
+   const getjury = async() => {
+    try{
+      
+      const id=localStorage.getItem('id')
+      const response= await fetch(`http://localhost:8000/api/getjury/${id}`)
+      const jsonData=await response.json()
+      setjury(jsonData)
+      console.log("jury",jsonData)
+      }catch(err)
       {
-          console.error(e.message)
+         console.error(err.message)
       }
-    }
-    useEffect(()=>{
-      getjurynote()
-      check()
-    })
+   }
 
-    const logout=async ()=>{
-        try{
-            await onLogout()
-            dispatch(unauthenticateUser())
-            localStorage.removeItem('isAuthenticated')
-        }catch(error)
-        {
-            //console.log(error)
-        }}
-      const protectedInfo=async()=>{
-        try{
-            const {data}=await fetchProtectedInfo()
-            setProtectedData(data.info)
-            setLoading(false)
-        }catch(error)
-        {
-            logout()
-        }
-      }  
-    useEffect(()=>{
-        protectedInfo();
-        getjury();
-    },[])
+
+   const getjurynote = async (id) => {
     
-    useEffect(() => { 
-        var date = new Date().getDate()
-        var month = new Date().getMonth() + 1 
-        var year = new Date().getFullYear()
-        setcurrentDate(
-          date + '/' + month + '/' + year
-        )
-       },[]);
+    try {
+      const res = await axios.get(`http://localhost:8000/api/getjurynote/${id}`)
+      setnotes(res.data[0])
+    }catch(e)
+    {
+        console.error(e.message)
+    }
+  }
+
+  const modiftest = (test3) => {
+    settest3(test3)
+  }
+
+  const logout=async ()=>{
+      try{
+          await onLogout()
+          dispatch(unauthenticateUser())
+          localStorage.removeItem('isAuthenticated')
+      }catch(error)
+      {
+          //console.log(error)
+      }}
+    const protectedInfo=async()=>{
+      try{
+          const {data}=await fetchProtectedInfo()
+          setProtectedData(data.info)
+          setLoading(false)
+      }
+      catch(error)
+      {
+          logout()
+      }
+    }  
+  useEffect(()=>{
+      protectedInfo();       
+      getjury();
+  },[])
+
+  const check2 = () => {
+    {jury.map((key) => {
+      getjurynote(key.e_id)
+      if (notes===undefined)
+      {
+        settest2(false)
+      }
+    })}
+  }
+
+  useEffect(()=>{
+    check2()
+  })
+
+  useEffect(() => { 
+      var date = new Date().getDate()
+      var month = new Date().getMonth() + 1 
+      var year = new Date().getFullYear()
+      setcurrentDate(
+        date + '/' + month + '/' + year
+      )
+     },[]);
+       
 
     return  (
     
@@ -523,7 +534,7 @@ const Jury = (props) => {
             </table>
            
        <br />
-        <div align='center'><button className='btn btn-primary'><a href='/editpv' id='pv'>edit pv</a></button></div>
+        {test2 &&(<div align='center'><Button variant="contained"><a href='/editpv' id='pv'>edit pv</a></Button></div>)}
        
       </React.Fragment>
       </Layout>
