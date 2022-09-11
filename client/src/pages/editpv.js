@@ -6,7 +6,7 @@ import * as React from 'react'
 import { useEffect, useState,useRef, Component, Fragment } from 'react'
 import { Link, Route, Routes,Switch, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
-
+import "../cssfiles/table.css"
 import {useReactToPrint} from 'react-to-print'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -303,62 +303,68 @@ const Editpv=()=>{
             <Layout>
                
             <React.Fragment >
-                <div ref={componentRef}>
-            <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                <div id='text'><h6>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</h6></div>
-                <p>Tunis le {currentDate}</p>
-                <div id='text1'><h4><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h4></div>
-                <br></br><p>Après examen des rapports et des exposés des élève-ingénieurs II3 dans le cadre de la validation de leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :</p>
-                <p>President: {nom}</p>
-                <p>Membres: {membre1?.nom}</p>
-                <p>{membre2?.nom}</p>
+                <div ref={componentRef} >
+            <Paper sx={{ width: '905px', overflow: 'hidden', align:'center' }}>
+              <div id='marge'>
+                <div className="divu">
+                <div id='text'><p>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</p></div>
+                <div id='text'><p>DIRECTION DES STAGES Année Universitaire 2020/2021</p></div></div>
+                <p id='ines'>Tunis le {currentDate}</p>
+                <div id='text1'><h5><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h5></div>
+                <br></br><div id='fu'>  Après examen des rapports et des exposés des élève-ingénieurs
+                   II3 dans le cadre de la </div>validation de
+                    leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :<br></br>
+                <div className="jl"><a>President :<strong> {nom}</strong></a>
+                <a>Membres : <strong>{membre1?.nom}</strong></a>
+                <a><strong>{membre2?.nom}</strong></a></div>
                 <p>Déclarent les résultats suivants : </p>
                 <TableContainer>
                     <div align='center'>
                  <table align='center' className="styled-table" >
                   <thead>
                     <tr>
-                      <td align="center">N°</td>
-                      <td align="center">Opt.</td>
-                      <td align="center">Elève-Ingénieur </td>
-                      <td align="center">N1</td>
-                      <td align="center">N2</td>
-                      <td align="center">N3</td>
-                      <td align="center">N4</td>
-                      <td align="center">N5</td>
-                      <td align="center">Moy</td>
-                      <td align="center">Observation</td>
+                      <td>N°</td>
+                      <td>Opt.</td>
+                      <td>Elève-Ingénieur </td>
+                      <td>N1</td>
+                      <td>N2</td>
+                      <td>N3</td>
+                      <td>N4</td>
+                      <td>N5</td>
+                      <td>Moy</td>
+                      <td>Observation</td>
                     </tr>
                   </thead>
                   <tbody>
                   {jury.map(row=>(
                   <Fetc ide={row.e_id} ></Fetc>
-                  
                      ))}
                   </tbody>
                  </table>
             </div>
                  </TableContainer>
+                 </div>
                  </Paper><br></br><br></br><br></br>
                  <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                  <div id='marge'>
                  <div id='text'><h6>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</h6></div>
                 <p>Tunis le {currentDate}</p>
                 <div id='text1'><h4><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h4></div>
                 <br></br><p>Après examen des rapports et des exposés des élève-ingénieurs II3 dans le cadre de la validation de leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :</p>
-                <p>President: {nom}</p>
+                <div><p>President: {nom}</p>
                 <p>Membres: {membre1?.nom}</p>
-                <p>{membre2?.nom}</p>
+                <p>{membre2?.nom}</p></div>
                 <p>Déclarent les résultats suivants : </p>
                 <TableContainer >
                     <div align='center'>
                  <table align='center' className="styled-table" >
                   <thead>
                     <tr>
-                      <td align="center">N°</td>
-                      <td align="center">Opt.</td>
-                      <td align="center">Elève-Ingénieur </td>
-                      <td align="center">Moy</td>
-                      <td align="center">Observation</td>
+                      <td>N°</td>
+                      <td>Opt.</td>
+                      <td>Elève-Ingénieur </td>
+                      <td>Moy</td>
+                      <td>Observation</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -369,7 +375,7 @@ const Editpv=()=>{
                  </table>
                     </div>
                  </TableContainer>
-
+                 </div>
                  </Paper><br></br>
                  </div>
                  <div align='center' >

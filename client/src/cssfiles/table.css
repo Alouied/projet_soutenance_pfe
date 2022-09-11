@@ -34,9 +34,12 @@
     color: solid #0f4ddc;
 }
 
+
 #text
 {
     text-align: center;
+    width: 150px;
+    font-size: small;
 }
 
 #text1
@@ -44,4 +47,36 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     color: #0f4ddc;
+}
+
+.divu
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#ines
+{
+    color: #0f4ddc;
+    font-size: small;
+}
+
+.jl
+{
+    margin-top: 20px;
+    display: block;
+    height: 100px;
+}
+
+.jl a {
+    display: block;
+}
+
+#fu
+{
+    margin-left: 20px;
+}
+#marge
+{
+    padding: 40px;
 }
