@@ -71,12 +71,13 @@ const Jurynotes=()=>{
         <div>
             <Navbar logout={logout}/>
             <Layout>
-                <h1>les notes</h1>
-              
+                <br></br>
+                <h1 align="center" style={{color:'grey'}}>les PV :</h1>
+                <br></br>
                {files.map(file=>{
 
                  
-                   return  <tr><td>{file.id}/ <a href={`http://localhost:8000/${file.pvurl}`}>{file.pvurl}</a></td></tr>
+                   return  <tr><td><img src="pdflogo.png" style={{width:"20px"}} /><a>     </a><a href={`http://localhost:8000/${file.pvurl}`}>{file.pvurl}</a></td></tr>
                                    
 
                } )}

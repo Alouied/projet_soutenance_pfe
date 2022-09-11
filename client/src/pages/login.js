@@ -55,13 +55,14 @@ function Login(){
 		
 		}
 	 }
-	
+	 
 	    dispatch(authenticateUser())
+
 	   localStorage.setItem('isAuth','true')
 	   localStorage.setItem('nom',data.user.nom)
 	   localStorage.setItem('id',data.user.user_id)
 	  
-   
+	   window.location.reload(false)
 	}
 	
 	   catch(error)
@@ -71,10 +72,8 @@ function Login(){
 	 
 	   }
 	 }
-	 
-    const logout=()=>{
-		
-	}
+	 console.log("page:",page)
+
 
     
     return(

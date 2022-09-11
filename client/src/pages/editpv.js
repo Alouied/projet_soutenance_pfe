@@ -315,10 +315,10 @@ const Editpv=()=>{
                 <br></br><div id='fu'>  Après examen des rapports et des exposés des élève-ingénieurs
                    II3 dans le cadre de la </div>validation de
                     leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :<br></br>
-                <div className="jl"><a>President :<strong> {nom}</strong></a>
+                <div className="jl" align="left"><a>President :<strong> {nom}</strong></a>
                 <a>Membres : <strong>{membre1?.nom}</strong></a>
                 <a><strong>{membre2?.nom}</strong></a></div>
-                <p>Déclarent les résultats suivants : </p>
+                <p align="left">Déclarent les résultats suivants : </p>
                 <TableContainer>
                     <div align='center'>
                  <table align='center' className="styled-table" >
@@ -352,15 +352,15 @@ const Editpv=()=>{
                 <div id='text'><p>UNIVERSITE DE LA MANOUBA École Nationale des Sciences de l’Informatique</p></div>
                 <div><img src="ensilogo.jpg"/></div>
                 <div id='text'><p>DIRECTION DES STAGES Année Universitaire 2020/2021</p></div></div>
-               <div align="left"> <p id='ines'>Tunis le {currentDate}</p></div>
-                <div id='text1'><h5><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h5></div>
-                <br></br><div id='fu'>  Après examen des rapports et des exposés des élève-ingénieurs
+               <div align="left"  > <p id='ines'>Tunis le {currentDate}</p></div>
+                <div id='text1' ><h5><i><a>Procès-Verbal</a><br></br><a>de validation des Projets de Fin d’Études </a><br></br>pour l’année universitaire 2021-2022 Session de Juin</i></h5></div>
+                <br></br><div id='fu' >  Après examen des rapports et des exposés des élève-ingénieurs
                    II3 dans le cadre de la </div>validation de
                     leurs projets de fin d’études du mercredi 22 et jeudi 23 juin 2022, le jury composé de :<br></br>
-                <div className="jl"><a>President :<strong> {nom}</strong></a>
+                    <div className="jl" align="left"><a>President :<strong> {nom}</strong></a>
                 <a>Membres : <strong>{membre1?.nom}</strong></a>
                 <a><strong>{membre2?.nom}</strong></a></div>
-                <p>Déclarent les résultats suivants : </p>
+                <p align="left">Déclarent les résultats suivants : </p>
                 <TableContainer >
                     <div align='center'>
                  <table align='center' className="styled-table" >

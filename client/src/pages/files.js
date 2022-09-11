@@ -24,7 +24,8 @@ const onsubmit=async(e)=>{
     const data=new FormData();
     data.append('file',file);
 
-  
+
+
     
    await axios.post('http://localhost:8000/api/upload',data).then((response)=>{
         toast.success('Upload Success')
@@ -34,6 +35,7 @@ const onsubmit=async(e)=>{
     }).catch((e)=>{
         toast.error('Error',e)
     })
+    window.location.reload(false)
 }
 const upload=()=>{
     document.getElementById('selectedfile').click()

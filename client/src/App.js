@@ -24,7 +24,7 @@ import { useSelector } from "react-redux/es/exports";
 export const RestrictedRoute=()=>{
 
   const page=localStorage.getItem('page');
-  localStorage.setItem('page',page)
+
   const {isAuth}=useSelector(state=>state.auth)
 
   
@@ -36,6 +36,7 @@ export const RestrictedRoute=()=>{
 
 }
  
+
  
 
 
@@ -51,17 +52,16 @@ function App() {
         <Routes>
         <Route element={<PrivateRoute/>} >
         <Route  path={"/dashboard"} element={<Dashboard/>} />
-       
-     
-        <Route  path={"/jury"} element={ (page==="/jury")?(<Jury/>):(<Dashboard/>)} />
+    
+        <Route  path={"/jury"} element={ (page==="/jury")&&(<Jury/>)} />
 
-        <Route  path={"/editpv"} element={<Editpv/>} /> 
+        <Route  path={"/editpv"} element={(page==="/jury")&&(<Editpv/>)} /> 
        
-        <Route  path={"/superviseur"} element={<Superviseur/>} />
+        <Route  path={"/superviseur"} element={(page==="/superviseur")&&(<Superviseur/>)} />
       
           <Route>
-        <Route  path={"/jurynotes"} element={<Jurynotes/>} />
-        <Route  path={"/admin"} element={<Admin/>} /></Route>
+        <Route  path={"/jurynotes"} element={(page==="/admin")&&(<Jurynotes/>)} />
+        <Route  path={"/admin"} element={(page==="/admin")&&(<Admin/>) }/></Route>
         </Route>
         <Route  path={"/"} element={<Home/>} />
         <Route element={<RestrictedRoute/>} >
