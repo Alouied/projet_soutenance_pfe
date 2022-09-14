@@ -147,7 +147,7 @@ const Admin=()=>{
             <div className="body">
         <form className="myform">
     <div className="card">
-        <div id="circle"></div>
+        
        
         <h5>Affectation des sujets</h5>
          <input type="text" placeholder="Nom de l'étudiant en autosuggestion"  value={name} onChange={(e) =>{setname(e.target.value)}}required/>
@@ -197,7 +197,7 @@ const Admin=()=>{
         </form>
         <form className="myform">
     <div className="card">
-        <div id="circle"></div>
+        
        
         <h5>Affectation des jurys</h5>
         <select name="etudiant" id="etudiant" className="supervisor" value={id}

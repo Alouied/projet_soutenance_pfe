@@ -66,7 +66,7 @@ function Register()
         <Navbar ></Navbar>
         <Layout>
         <div className="text-center" >
-        <div className="logo">register</div>
+        <div className="logo"><h1>S'inscrire</h1></div>
       
         <div className="login-form-1">
             <form onSubmit={(e)=>onSubmit(e)} id="register-form" className="text-left">
@@ -74,8 +74,8 @@ function Register()
                 <div className="main-login-form">
                     <div className="login-group">
                         <div className="form-group">
-                            <label htmlFor="nom" className="sr-only">username</label>
-                            <input type="text" id="nom" name="nom" onChange={(e)=>onChange(e)} value={values.nom} className="form-control"  placeholder="username" 
+                            <label htmlFor="nom" className="sr-only">Nom Prénom</label>
+                            <input type="text" id="nom" name="nom" onChange={(e)=>onChange(e)} value={values.nom} className="form-control"  placeholder="nom prénom" 
                              required/>
                         </div>
                         
@@ -85,8 +85,8 @@ function Register()
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password" className="sr-only">Password</label>
-                            <input type="password" id="password" name="password" className="form-control" value={values.password} placeholder="password" onChange={(e)=>onChange(e)}required/>
+                            <label htmlFor="password" className="sr-only">Mot de passe</label>
+                            <input type="password" id="password" name="password" className="form-control" value={values.password} placeholder="mot de passe" onChange={(e)=>onChange(e)}required/>
                         </div>
                        
                         
@@ -123,7 +123,7 @@ function Register()
                 <div style={{color:'red',margin:'10px 0'}}>{error}</div>
                 <div style={{color:'green',margin:'10px 0'}}>{success}</div>
                 <div className="etc-login-form">
-                    <p>already have an account? <Link to={"/login"}>login here</Link></p>
+                    <p>Vous possédez déjà un compte ?  <Link to={"/login"}>Connexion</Link></p>
                 </div>
             </form>
         </div>

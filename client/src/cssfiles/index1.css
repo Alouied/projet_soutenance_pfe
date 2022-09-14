@@ -122,14 +122,14 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 #page{
-  border-radius: 1000%;
-}
-
-#notetable{
-  margin-left: 10%;
-  border-color: #ffffff;
-  border-width: 20px;
-}
+  border-radius: 1000%;}
+  
+  #notetable{
+    margin-left: 7%;
+    border-color: #ffffff;
+    border-width: 20px;
+    width: 700px;
+  }
 
 #valider{
   text-align: right;
@@ -225,3 +225,17 @@ body, html, .App, #root, .auth-wrapper {
 .head{
   color: #006eff;
 }
+#date
+{
+ font-family: Arial, Helvetica, sans-serif;
+}
+.table2{
+    
+  margin-top: 10px;
+    margin-left: 40px;
+  padding-bottom: 7px;
+     width: 1050px;
+    background-color: #fcfcfc;
+     box-shadow: 2px 2px 5px 1px rgb(180, 178, 178);
+     border-radius: 15px;
+ }

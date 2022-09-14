@@ -229,8 +229,8 @@ import Navbar from "../component/navbar"
         <Fragment>
                  <Button variant="outlined" id='note' align="center" style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Note</Button>
-                 <Dialog open={open} id="page" maxWidth="lg" onClose={handleClose} >
-                 <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "650px",width:"2px", color:"red"}}>X</Button>
+                 <Dialog open={open} id="page1" maxWidth="lg" onClose={handleClose} >
+                 <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "750px",width:"2px", color:"red"}}>X</Button>
                  <h5 align="center">Fiche note encadrant de l'entreprise <div> Pour <strong> {props.nom} </strong></div></h5>
                  <h5 align="center"> </h5>
                  <form onSubmit={handleSubmit}>
@@ -501,8 +501,8 @@ const Jury = (props) => {
         <Navbar logout={logout}/>
         <Layout>
       <React.Fragment>
-      <div align="center"><h1 >Jury Space</h1></div><br /><br />
-        <h4 align="center" id="date">jury date {currentDate}</h4><br />
+      
+        <h4 align="center" id="date" style={{marginTop:"120px",marginBottom:"-50px"}}>jury date {currentDate}</h4><br />
        
         
           <div style={{alignItems:"center" }}>
@@ -511,7 +511,7 @@ const Jury = (props) => {
           </div>
 
         <table className="table2">
-                <thead><tr><td align="center" >N°</td>
+                <thead><tr><td align="center" className='head container'>N°</td>
                 <td align="center" className='head container'>Opt.</td>
                 <td align="center" className='head container'>Elève Ingénieur</td>
                 <td align="center" className='head container'>N1 Encadrant</td>

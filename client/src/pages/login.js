@@ -95,8 +95,8 @@ function Login(){
                             }/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="lg_password" className="sr-only">Password</label>
-						<input type="password" className="form-control"  id="password" placeholder="password" onChange={(e)=>onChange(e)}/>
+						<label htmlFor="lg_password" className="sr-only">mot de passe</label>
+						<input type="password" className="form-control"  id="password" placeholder="mot de passe" onChange={(e)=>onChange(e)}/>
 					</div>
 					
 				</div>
@@ -106,7 +106,7 @@ function Login(){
 			</div>
 			<div className="etc-login-form" >
            
-				<p>new user? <Link to={"/register"}>create new account</Link></p>
+				<p>nouveau utilisateur ? <Link to={"/register"}>créer un compte </Link></p>
 			</div>
             
 		</form>

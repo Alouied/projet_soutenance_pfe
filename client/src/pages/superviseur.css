@@ -26,7 +26,7 @@ margin-left: 10px;
 }
 .btn{
     justify-content: center;
- 
+border: none;
     display: flex;
 }
 
@@ -34,18 +34,30 @@ margin-left: 10px;
    margin-left: 120px;
  margin-top: 70px;
     width: 1000px;
-   background-color: #dce8dc;
-    box-shadow: 2px 2px 5px 10px rgb(180, 178, 178);
+   background-color: #ffffff;
+    box-shadow: 2px 2px 5px 1px rgb(180, 178, 178);
 }
 .table2{
     
-  margin-top: 10px;
-
-  padding-bottom: 7px;
-     width: 1050px;
-    background-color: #dce8dc;
-     box-shadow: 2px 2px 5px 10px rgb(180, 178, 178);
- }
+    margin-top: 10px;
+      margin-left: 40px;
+    padding-bottom: 7px;
+       width: 1050px;
+      background-color: #fcfcfc;
+       box-shadow: 2px 2px 5px 1px rgb(180, 178, 178);
+       border-radius: 15px;
+   }
+   .table4{
+    margin-left: 120px;
+    margin-top: 70px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+       width: 1000px;
+      background-color: #ffffff;
+       box-shadow: 2px 2px 5px 1px rgb(180, 178, 178);
+   
+   }
+  
 .form-group2{
     padding: 5px;
     margin-left: 30px;

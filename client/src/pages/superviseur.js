@@ -6,7 +6,8 @@ import { fetchProtectedInfo,onLogout } from "../api/auth"
 import { unauthenticateUser } from "../redux/slices/authSlice"
 import getEtudiant , {validefiche,getfiche,updatefiche, updatenote, postnote,getnote} from "../api/superviseur"
 import Button from '@mui/material/Button';
-
+import "../cssfiles/index1.css"
+import "../cssfiles/stylesheet.css"
 import Dialog from '@mui/material/Dialog';
 import { Navbar } from "../component/navbar"
 import Paper from '@mui/material/Paper';
@@ -110,7 +111,7 @@ const Visite1=(props)=>{
     
     return ( 
         <Fragment>
-            <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
+            <Button variant="outlined"  id='note' align="center" style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Visite 1</Button>
                  <Dialog open={open} id="page" maxWidth="lg"className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
@@ -274,7 +275,7 @@ const Note=(props)=>{
     
     return ( 
         <Fragment>
-            <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
+            <Button variant="outlined" id='note' align="center" style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Note</Button>
                  <Dialog open={open} id="page" maxWidth="lg" className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
@@ -442,7 +443,7 @@ const Visite2=(props)=>{
     
     return ( 
         <Fragment>
-            <Button variant="outlined" id='visite' style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
+            <Button variant="outlined"  id='note' align="center"style={{width:"flex",borderColor:"grey"}} onClick={handleClickOpen}>
                  Visite 2</Button>
                  <Dialog open={open} id="page" maxWidth="lg" className="dialogbox" onClose={handleClose}>
                  <Button onClick={handleClose} style={{ padding: "5px", marginLeft: "700px",width:"2px", color:"red"}} >X</Button>
@@ -563,13 +564,15 @@ const Table=(props)=>{
    
     return(
         <Fragment>
-        <tr>   
-        <td>{etudiants[0] && etudiants[0].nom}</td>
-        <td><Visite1 id={ide}  organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Visite1></td>
-        <td><Visite2  id={ide} organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Visite2></td>
-        <td><Note  id={ide} organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Note></td>
-       </tr>
+        <tr >   
+        <td align="center"   >{etudiants[0] && etudiants[0].nom}</td>
+       
+        <td align="center"  ><Visite1 id={ide}  organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Visite1></td>
       
+        <td align="center"  ><Visite2  id={ide} organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Visite2></td>
+        <td align="center"  ><Note  id={ide} organisme={organisme} nom={nom} sujet={sujet} ns={ns}></Note></td>
+       </tr>
+       <br />
       </Fragment>
     )
 }
@@ -650,14 +653,16 @@ const Superviseur=()=>{
     
             
                 
-                <table className="table">
+                <table className="table4" align="center">
                    <thead>
-                      <tr>
-                         <th>Nom de l'étudiant </th>
-                         <th>Visite 1</th>
-                         <th>Visite 2</th>
-                         <th>Note</th>
+                   <br />
+                      <tr >
+                         <td align="center" className="head center" >Nom de l'étudiant </td>
+                         <td align="center" className="head center">Visite 1</td>
+                         <td align="center"className="head center" >Visite 2</td>
+                         <td align="center" className="head center">Note</td>
                      </tr>
+                     <br />
                     </thead>
                     <tbody>
                     
