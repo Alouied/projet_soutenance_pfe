@@ -357,7 +357,7 @@ import Navbar from "../component/navbar"
             } }  />):(<p>{notes?.n5question}</p>)}</td>
 
           <td align='center'>{(test || !test10)?(!test10)?<p>{NOTE1/5+N2/5+N3/5+N4/5+N5/5}</p>:(<p>{values1?.moyenne}</p>) :(<p>{notes?.moyenne}</p>)}</td>
-          <td align='center'>{(test || !test10)?(<input id='publiable' checked={values1?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />):(<input id='publiable' checked={notes?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />)}</td>
+          <td align='center'><label className='container3' >{(test || !test10)?(<input   id='publiable' checked={values1?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />):(<input id='publiable' checked={notes?.publiable=='P'} onChange={handlecheckbox} type="checkbox" />)} <span class="checkmark"></span></label></td>
           <td>{((notes || test10) && !test2)?(<div ><Button align='center'  onClick={modifier} role="button">modifier</Button></div>):(<Button align='center'  onClick={submit} role="button">valider</Button>)}</td>
         </Fragment>
        )}

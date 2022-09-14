@@ -98,7 +98,7 @@ const Visite1=(props)=>{
             setSuccess(data.message)
           }
           setError('')
-        
+          handleClose();
     
       } 
       catch(error)
@@ -146,7 +146,7 @@ const Visite1=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarque</label>
-						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="crq" name="crq" onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
 					</div>
                     <h5>Réalisation :</h5>
                     <div className="form-group">
@@ -163,7 +163,7 @@ const Visite1=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="rrq" name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
 					</div>
                     <h5>Divers :</h5>
                     <div className="form-group">
@@ -180,7 +180,7 @@ const Visite1=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="drq"required name="drq" onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="drq" name="drq" onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
 					</div>
                  
                 <div style={{color:'green',margin:'10px 0'}}>{success}</div>
@@ -255,7 +255,7 @@ const Note=(props)=>{
             setSuccess(data.message)
             setError('')
           }
-
+          handleClose();
           }else{
             setError("note entre 5 et 0")
           }
@@ -386,7 +386,7 @@ const Visite2=(props)=>{
             }
             setError('')
          
-         
+            handleClose();
         
     
       } 
@@ -423,7 +423,7 @@ const Visite2=(props)=>{
             }
             
            
-
+           
         }catch(err)
         {
             console.error(err.message)
@@ -476,7 +476,7 @@ const Visite2=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarque</label>
-						<input type="text"  className="form-control" id="crq" name="crq" required onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="crq" name="crq"  onChange={(e)=>setValues({...values,crq:e.target.value})} value={values?.crq}placeholder=".............................................................................................................................." />
 					</div>
                     <h5>Réalisation :</h5>
                     <div className="form-group">
@@ -493,7 +493,7 @@ const Visite2=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="rrq" required name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="rrq" name="rrq" onChange={(e)=>setValues({...values,rrq:e.target.value})} value={values?.rrq} placeholder=".............................................................................................................................." />
 					</div>
                     <h5>Divers :</h5>
                     <div className="form-group">
@@ -510,7 +510,7 @@ const Visite2=(props)=>{
 					</div>
                     <div className="form-group">
 						<label htmlFor="" className="">Remarques</label>
-						<input type="text"  className="form-control" id="drq" name="drq"  required onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
+						<input type="text"  className="form-control" id="drq" name="drq"   onChange={(e)=>setValues({...values,drq:e.target.value})} value={values?.drq} placeholder=".............................................................................................................................." />
 					</div>
                     <div style={{color:'red',margin:'10px 0'}}>{error}</div>
                 <div style={{color:'green',margin:'10px 0'}}>{success}</div>

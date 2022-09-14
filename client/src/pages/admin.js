@@ -14,6 +14,7 @@ const Admin=()=>{
     const Navigate = useNavigate();
     const [name,setname] = useState('');
     const [iden, setiden] = useState('');
+    const [error,setError] = useState(false);
     const [Numsujet, setNumsujet] = useState('');
     const [sujet, setsujet] = useState('');
     const [organisme, setorganisme]=useState('');
@@ -109,6 +110,7 @@ const Admin=()=>{
           sup_id:supervisor
       });
       window.alert("Supervisor has been successfully registered!")
+      window.location.reload(false)
     }
   //jury
   const submitjury = async (e) => {
@@ -122,10 +124,13 @@ const Admin=()=>{
       heure:heure,
   });
   window.alert("Jury has been successfully registered!")
+  window.location.reload(false)
+
 }
   //etudiant
       const press = async (e) => {
         e.preventDefault();
+        try{
         await Axios.post('http://localhost:8000/api/postetudiant', {
           nom: name,
           number:iden,
@@ -135,6 +140,11 @@ const Admin=()=>{
           sujet:sujet,
       });
       window.alert("Student has been successfully registered!")
+      window.location.reload(false)
+    }catch(error)
+      {   
+        window.alert(error.response.data.error)
+      }
     }
     return loading ? (
         <Layout>
@@ -159,8 +169,9 @@ const Admin=()=>{
          <input type="text" placeholder="Titre du sujet" value={sujet} onChange={(e) =>{setsujet(e.target.value)}} required/>
          
          <input type="text" placeholder="Organisme d'accueil (l'entreprise)" value={organisme} onChange={(e) =>{setorganisme(e.target.value)}} required/>     
+       
         <div className="content">
-        <button onClick={press} ><a>register</a></button>
+        <button onClick={press} ><a>valider</a></button>
         </div>
       </div>
         </form>
@@ -190,8 +201,9 @@ const Admin=()=>{
               <option value={item.user_id}>{item.nom}</option>
             ))}
         </select>
+        
         <div className="content">
-        <button onClick={submit}><a>register</a></button>
+        <button onClick={submit}><a>valider</a></button>
         </div>
         </div>
         </form>
@@ -240,7 +252,7 @@ const Admin=()=>{
         <input type="date"  placeholder="Calendrier pour choisir date soutenance" value={date} onChange={(e) =>{setdate(e.target.value)}}required/>
         <input type="text" placeholder="Heure soutenance"  value={heure} onChange={(e) =>{setheure(e.target.value)}}required/>
         <div className="content">
-        <button onClick={submitjury} ><a>register</a></button>
+        <button onClick={submitjury} ><a>valider</a></button>
         </div>
       </div>
         </form>   

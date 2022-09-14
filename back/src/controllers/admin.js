@@ -45,9 +45,12 @@ const db=require('../db/basedonnee')
       message:'Added successfully'
   })
     }
-    catch(err){
-      console.log(err.message)
-    } 
+    catch(error){
+      console.log(error.message)
+      return res.status(500).json({
+         error:error.message
+      })
+     }
   };
   
   
