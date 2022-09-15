@@ -110,7 +110,7 @@ exports.postnotesencadrant = async (req,res)=>{
     try{
         await db.query('insert into noteencadrant (e_id,note1,note2,note3,note4,note5,note6,note7,notefinale) values ($1,$2,$3,$4,$5,$6,$7,$8,$9)',[e_id,note1,note2,note3,note4,note5,note6,note7,notefinale])
         console.log('N1 encadrant updated')
-        res.json('N1 encadrant updated')
+        res.json('N1 encadrant actualisé')
     }
     catch(error){
      console.log(error.message)

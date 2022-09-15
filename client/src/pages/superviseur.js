@@ -257,7 +257,7 @@ const Note=(props)=>{
           }
           handleClose();
           }else{
-            setError("note entre 5 et 0")
+            setError("  note entre 0 et 5")
           }
           
         

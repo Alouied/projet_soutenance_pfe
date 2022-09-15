@@ -201,6 +201,7 @@ function Aziz(props) {
 const Editpv=()=>{
     const dispatch=useDispatch()
     const [loading,setLoading]=useState(true)
+    const [test,settest]=useState(false)
     const [protectedData,setProtectedData]=useState(null)
     const Navigate = useNavigate();
     const [jury,setjury]=useState([])
@@ -213,7 +214,9 @@ const Editpv=()=>{
     const handleprint =useReactToPrint({
         content:()=>componentRef.current,
         documentTitle:'dossier',
+        
       })
+   
 
        
     const getmembre1 = async (id1) => {
@@ -385,9 +388,11 @@ const Editpv=()=>{
                  </Paper><br></br>
                  </div>
                  <div align='center' >
-                  <Button variant="contained" onClick={handleprint}>imprimer</Button>
-                 
-                 <FileUploader></FileUploader>
+                  <Button variant="contained"   onClick={handleprint}>imprimer</Button>
+               
+                  <FileUploader></FileUploader>
+                
+               
                  </div>
                  
                 <br></br>

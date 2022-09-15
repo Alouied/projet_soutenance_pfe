@@ -37,7 +37,7 @@ exports.postFiche= async (req,res)=>{
         [e_id,csituation,cmethode,crapport,crq,rsituation,rmateriel,rlangage,rrq,dniveau,dassiduite,drh,drq,numero])
         return res.status(201).json({
             success:true,
-            message:'Valide'
+            message:'Validé'
         })
    
     }
@@ -70,7 +70,7 @@ exports.putFiche= async (req,res)=>{
         [e_id,csituation,cmethode,crapport,crq,rsituation,rmateriel,rlangage,rrq,dniveau,dassiduite,drh,drq,numero])
         return res.status(201).json({
             success:true,
-            message:'Updated'
+            message:'Actualisé'
         })
    
     }
@@ -89,7 +89,7 @@ exports.postnote= async (req,res)=>{
         await db.query('insert into note(e_id, assiduite, conception, rapport, realisation, note, justification) values ($1,$2,$3,$4,$5,$6,$7)',[e_id, assiduite, conception, rapport, realisation, note, justification])
         return res.status(201).json({
             success:true,
-            message:'valide'
+            message:'validé'
         })
    
     }
@@ -108,7 +108,7 @@ exports.putnote= async (req,res)=>{
         await db.query('update note set assiduite=$2, conception=$3, rapport=$4, realisation=$5, note=$6, justification=$7 where e_id=$1',[e_id, assiduite, conception, rapport, realisation, note, justification])
         return res.status(201).json({
             success:true,
-            message:'Updated'
+            message:'Actualisé'
         })
    
     }

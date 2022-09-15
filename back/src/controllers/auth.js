@@ -25,7 +25,7 @@ exports.register= async (req,res)=>{
         await db.query('insert into users(nom,email,password,jury,sup,adm) values ($1,$2,$3,$4,$5,$6)',[nom,email,hashedPassword,jury,sup,adm])
         return res.status(201).json({
             success:true,
-            message:'the registration was succeful'
+            message:'enregistrement  réussi'
         })
    
     }

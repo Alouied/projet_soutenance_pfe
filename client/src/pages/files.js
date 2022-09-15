@@ -39,6 +39,7 @@ const onsubmit=async(e)=>{
 }
 const upload=()=>{
     document.getElementById('selectedfile').click()
+    
 }
 return (
    <form method="post" action='#' id='#' onSubmit={onsubmit}>
